@@ -11,3 +11,6 @@ klokkeslett.innerHTML = "00:00:00";
 let tid = new Date ();
 let tidspunkt =tid.getHours()+ ":" + tid.getMinutes () + ":" + tid.getSeconds();
 klokkeslett.innerHTML = tidspunkt;
+window.setTimeout(function () {
+    window.location.reload();
+  }, 1000);
