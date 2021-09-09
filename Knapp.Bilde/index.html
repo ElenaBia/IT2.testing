@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endrer bilde</title>
+    <!-- NB: Stilark skal typisk ligge eksternt. -->
+    <style>
+        body { width: 100%; height: 100vh; display: grid; justify-content: center; align-content: center; }
+        button { padding: 20px; background-color: white; cursor: pointer;}
+        figure { margin: 40px;  width: 350px; height: 350px; }
+        main { display: flex; flex-direction: column; }
+        section { display: flex; justify-content: space-around;  }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <button id="knappEndrerBilde">Endre bilde</button>
+            <button id="knappEndrerStr">Endre størrelse</button>
+        </section>
+        <figure>
+            <img id="bilde" src="bilder/clock.svg" alt="" width="300px">
+        </figure>
+    </main>
+
+    <!-- NB: Koden skal typisk ligge eksternt. -->
+    <script>
+        //Her definerer eg en variabel for bilde//
+
+        let bilde = document.getElementById("bilde");
+        //Her manipulerer jeg sourcen til bildet, fra js
+        bilde.src = "bilder/medicine.svg";
+
+
+
+
+        //Definerer en ny variabel for knappen som endrer bilde
+       let knappEndrerBilde = document.getElementById ("knappEndrerBilde");
+        
+        /*lager en funksjon slik at når man trykker på knappen "endre bilde" - "click" - 
+        så vil funksjonen endreBilde aktiveres. (Funksjonen definerer vi i linjen under*/
+    
+        knappEndrerBilde.addEventListener("click", endreBilde);
+
+       function endreBilde() {
+           // console.log("Funskjonen funker ;I");   *Her testet vi om koblingen funker*
+            console.log("Bildet før : " + bilde.src);
+            bilde.src = "bilder/donut.svg";  //Hva funksjonen skal gjøre når vi trykker på knappen
+            console.log("Bildet etter: " + bilde.src);
+        }
+        
+
+
+
+
+        //Definerer en variable for knappen som endrer str
+
+        let knappEndrerStr = document.getElementById ("knappEndrerStr");
+
+        //Definerer en endring som skal skje - funksj. endreStr - ved click
+        knappEndrerStr.addEventListener("click", endreStr);
+
+        //Definere selve funksjonen endreStr
+        function endreStr (){
+            //console.log ("funksjonen funker"); * Tester om koblingen funker*
+            console.log ("størrelsen på bildet er opprinnelig" + bilde.width);
+            bilde.width = bilde.width - 10;
+            console.log ("nå er synker størrelsen med 10, slik at den er nå " + bilde.width + "px.");
+        }
+        
+      
+    </script>
+</body>
+</html>
