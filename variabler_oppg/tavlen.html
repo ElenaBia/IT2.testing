@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>eksempel</title>
+</head>
+<body>
+    <div> <!-- Her skal listen vi lagde med navn komme inn-->
+        <p id="utskriftArray"></p>
+    </div>
+
+    <script>
+        //tabeller, arrays
+        //Her lager vi en liste med navn som skal bli printet ut i html-en
+        let arrayNavn =[" Bia", "bia", "balaban"];
+        console.log(arrayNavn);
+        document.getElementById("utskriftArray").innerHTML =arrayNavn;
+        
+
+        //forskjellige tallsystem vi kan få ut fra parseINT
+        let pris = 5 ;
+        console.log("prisen er: " + pris);
+        console.log(parseInt("4 kr", 10));
+        console.log(parseInt("1111", 2));
+        console.log(parseInt("a", 16));
+
+        //bolean, sann/usann
+        let skalHaRabatt =true;
+        if (skalHaRabatt){ //alternative: skalharrabatt ==true
+            pris = pris * 0.5; //0.5 er rabatten
+        }
+        else{
+            pris==pris; //
+        }
+
+        //her manipulerer vi listen slik at vi får det som en faktisk liste med bulletpoints 
+        //som det er vanlig å lage i en html
+        for(let hverElement of arrayNavn) {
+            document.getElementById("utskriftArray").innerHTML +=  "<li>" + hverElement + "<!>";
+            console.log(hverElement);
+        }
+        //her tar vi ut hver enkelte bokstav fra variabelene
+        let nyttNavn = "Hvordan funker? Dette? ";
+        for (let bokstav of nyttNavn) {
+            console.log(bokstav);
+            if( bokstav == "?") {
+
+                console.log(" spørsmålstegn!");
+
+            }
+            else{
+                console.log("Hvor er spørsmålstegnet?");
+
+            }
+        };
+
+        //her bruker vi matematiske tegn :)
+        const tallPI = Math.PI;
+        console.log(tallPI);
+
+        //i  miniatyr mest komplisert måte å skrive variabler på
+        let person1 = {
+            navn: "Bianca",
+            yrke: "Datasikkerhet",
+            alder: 18 + "år."
+        }
+        console.log(person1.yrke);
+
+        /*oppgave: les inn 2 stedsnavn fra brukeren.
+        finn differansen i antall tegn på disse to.
+        */
+
+       
+    </script>
+    
+</body>
+</html>
