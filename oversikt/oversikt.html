@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <title>Variabler</title>
+</head>
+<body>
+
+   <div>
+       <h1>Hei!</h1>
+       <p id="test1">Her er det litt tekst.</p>
+       <p id="test2">Her er det litt tekst.</p>
+   </div>
+   <br>
+   <div>
+       <p>Her kommer det et bilde av en klokke:)</p>
+       <img id="bilde" src="clock.svg" alt="klokke" width="200px" height="200px">
+   </div><br>
+
+   <div style="border: solid 1px green;">
+       <p>Første deltaker er:</p>
+
+       <p id="deltaker" style="color: red;"> hei</p>
+   </div><br>
+
+   <div style="border: solid 1px purple;">
+    <p>Nå skal vi tegne litt :)</p>
+
+    <canvas id="canvas"> hei</canvas>
+    </div><br>
+
+    <script>
+
+        //            BASIC JAVASCRIPT        ///
+
+
+
+        //her skriver vi direkte i html-en. Som en vanlig p.
+       document.write("hallo, her manipulerer vi  fra JS :)");
+      
+
+
+       //Her har man kommando for at det kommer en popup vindu (uten input):
+       //alert("velkommen!");
+       //Her er det en popup vindu med input felt:
+       // prompt("hva heter du?");
+
+
+        //her bruker jeg window - skjermen tag - til å finne størrelsen på skjermen.
+        console.log("Skjermen din er: " + window.innerHeight + "px høy, og " + window.innerWidth + "px brei.");
+        //her finner vi plasseringen til skjermen (location)
+        console.log("her er url til nettsiden du er inn på akk no " + window.location);
+
+        //finner info om navnet til nettleseren
+        console.log ("Dette er navnet på nettleseren" + navigator.appName);
+         //finner info om navnet til nettleseren
+        console.log ("Dette er versjonenen av nettleseren" + navigator.appVersion);
+
+
+
+        //endrer hele inholdet til bodyen:
+       // alert (document.body.innerHTML = "DETTE ER de nye innholdet i html-en");
+
+
+       //manipulere tekst fra js.
+        document.getElementById("test1").innerHTML = "Denne ble manipulert fra js";
+
+        //hente attributtene og verdiene til et html-element, her henter eg bredden til bilde
+        console.log(document.getElementById("bilde").width + "px");
+
+
+        //endrfe på attributtene til et element
+        //document.getElementById("bilde").width = "30";
+
+        //endrer bildet slik:
+       // document.getElementById("bilde").src = "donut.svg"
+
+       //advarsel og error koder
+       console.warn ("Hav nivået begynner å stige!");
+       console.error("Hav nivået har steget nå! Hva gjør vi?!");
+
+
+
+
+       //        VARIABLEEEEERRRRRR        //
+
+
+       //string variabler
+        let navn = "marie";
+        console.log(navn);
+
+        //integer value - numerisk verdi
+        let alder = 18;
+        document.write(" Jeg er " + alder + "år gammel.");
+
+        //bruke template string, Vær skikkelig OBS på hvilken anførselstegn du bruekr
+        console.log(`Hei ${navn}, er du 
+        ${alder} år gammel?`);
+
+        //avrunde desimaler: Bruk toFixed
+        let desimal = 34.96504
+        console.log(desimal.toFixed(2));
+
+        //array = lister
+        var jenter = ["marie", "kristin", "marte", "mira", "lise"]
+        //velger hvilken navn som vi vil ha, husk at vi teller fra 0 
+        console.log(jenter[2]);
+      
+
+        //objekt, du MÅ spesifisere hvilken verdier du vil få fram.
+        var deltaker1 = {Navn: "Gunnhild", Alder: 60};
+        document.getElementById("deltaker").innerHTML = deltaker1.Navn + ",  " + deltaker1.Alder +" år.";
+
+
+        //boolean Sann/usann variabler
+        var Varmt = true;
+        console.log("Er det varmt ute? " + Varmt);
+        
+
+        //tegning med js
+        var canvas = document.getElementById("canvas");
+        var ctx =canvas.getContext("2d");
+        
+        //to første er posisjonering, to siste er bredde og høyde
+        ctx.fillRect(50,70,50,50);
+        ctx.fillRect(40,20,10,40);
+        ctx.fillRect(20,40,10,40);
+        
+    </script>
+</body>
+</html>
