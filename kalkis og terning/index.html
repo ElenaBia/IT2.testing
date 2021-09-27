@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terning og kalkis</title>
+
+</head>
+<body>
+
+    <!-- Prøv selv fra boken oppg.-->
+    
+    <div> <!-- Oppg 2. s.83 terning kast-->
+        <h1>Terningkast</h1>
+        <!-- Her lager vi en knapp-->
+        <button type="button" id="trilleKnapp" >Trykk her for å trille</button>
+        <!-- her kommer tallet man fikk-->
+        <p id="tallSomKommer"> Du fikk: </p><br><br>
+
+        <!---- Her kommer bilder av terningen-->
+        <p>Bildet av terningen:</p><br>
+        <img src="" alt="" id="terning" width="100px">
+
+    </div><br><br>
+
+    <div><!-- oppg. 5 s. 83. Kalkis-->
+        <h1>Regn ut det du trenger!</h1><br>
+        <input type="number" id="tall1" placeholder="skriv første tall">
+        <input type="number" id="tall2" placeholder="skriv andre tall">
+       
+        <!--- Her selekterer brukeren hvilket regneart vil han bruke-->
+        <select id="regneart">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+
+        <button type="button" id="regneKnapp">Regn!</button>
+        <!-- Her kommer resultatet-->
+        <p id="svarTall" style="border-bottom: double black; width: fit-content;"> Her kommer svaret:)</p>
+
+    </div>
+    
+
+    
+
+    <script>
+
+        //vi sier når funksjonen Trill skal settes i gang
+       document.getElementById("trilleKnapp").addEventListener("click", Trill);
+
+       // vi lager en array for bildene av hver terningside
+       const terningside = ["1", "2", "3", "4", "5", "6"];
+
+
+       function Trill(){
+           //her definerer vi variabelen tall, som skal gi et random tall fra 1-6
+            let tall = Math.floor(Math.random()*6)+1;
+
+            //hva skjer hvis tallet blir 6
+           if (tall == 6){
+               document.getElementById("tallSomKommer").innerHTML = "Gratulerer ! Tallet du fikk er 6! ";
+            }
+            //hva skjer hvis tallet blir 5
+           else if (tall == 5){
+               document.getElementById("tallSomKommer").innerHTML = " Du fikk 5! Ikke verst!"
+            }
+            //hva skjer hvis tallet blir alt annet
+           else{
+                document.getElementById("tallSomKommer").innerHTML = " Du fikk " + tall + ". Prøv en gang til."
+            }
+
+            //Her kombinere vi arrayen med variabelen tall, slik at den viser rett terningside.
+            // vi tar tall - 1 fordi js begynner å telle fra 0 -> dermed når tall = 1 viser det egt bilde2
+            document.getElementById("terning").src= "bilder/" + terningside[tall - 1] + ".png";
+        }
+
+        //             her begynner jeg på den andre oppgaven
+
+        let tall1 = document.getElementById("tall1").value;
+        let tall2 = document.getElementById("tall2").value;
+
+        let regneartIndex = document.getElementById("regneart").value;
+
+        //let regneart = Array.from(regneartIndex);
+
+
+        //        TRENGER HJELP! skjønner ikke hvorfor det er bare pluss som blir tatt med
+        console.log(regneartIndex);
+
+        //const regn = document.getElementById("regneKnapp").addEventListener("click", regnUT);
+
+      
+
+
+    </script>
+
+
+</body>
+</html>
