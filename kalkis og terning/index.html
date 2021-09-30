@@ -79,18 +79,36 @@
 
         //             her begynner jeg på den andre oppgaven
 
-        let tall1 = document.getElementById("tall1").value;
-        let tall2 = document.getElementById("tall2").value;
+        const regn = document.getElementById("regneKnapp").addEventListener("click", regnUT);
 
-        let regneartIndex = document.getElementById("regneart").value;
+        function regnUT (){
+            let tall1 = Number(document.getElementById("tall1").value);
+            let tall2 = Number(document.getElementById("tall2").value);
 
-        //let regneart = Array.from(regneartIndex);
+            let regneartIndex = document.getElementById("regneart").value;
+
+            let svarTall = document.getElementById("svarTall");
+
+            if (regneartIndex == "+"){
+              svarTall.innerHTML = tall1 + tall2;
+            }
+            else if (regneartIndex == "-"){
+                svarTall.innerHTML = tall1 - tall2;
+            }
+            else if (regneartIndex == "*"){
+                svarTall.innerHTML = tall1 * tall2;
+            }
+            else{
+                svarTall.innerHTML = tall1 / tall2;
+            }
+        }
+
+    
 
 
-        //        TRENGER HJELP! skjønner ikke hvorfor det er bare pluss som blir tatt med
-        console.log(regneartIndex);
+        
 
-        //const regn = document.getElementById("regneKnapp").addEventListener("click", regnUT);
+       
 
       
 
