@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>løkker</title>
+</head>
+<body>
+    <h1>oppg 1, 3 og 4 s.90</h1>
+
+    <p>opp. 1</p><br>
+
+    <p id="oppg1"></p><br><br>
+
+    <p>opp. 3</p><br>
+
+    <p id="oppg3"></p><br><br>
+
+    <p>opp. 4</p><br>
+
+    <p id="oppg4"></p><br><br>
+
+    <script>
+        let oppg1 = document.getElementById("oppg1");
+        let oppg3 = document.getElementById("oppg3");
+        let oppg4 = document.getElementById("oppg4");
+
+        /* ------------------------------------------------
+
+                           Oppgave 1  
+        
+        ---------------------------------------------------*/
+
+        let vinner = Math.floor(Math.random()*10+1);
+        console.log(vinner);
+        
+        while(vinner !== 10 ){
+            oppg1.innerHTML="Du vant ikke!";
+            vinner++;
+        }
+       
+
+ /* ------------------------------------------------
+
+                           Oppgave 3 
+        
+        ---------------------------------------------------*/
+        
+        let terningSum = 0;
+      
+        while(terningSum<50){
+            let i = Math.floor(Math.random()*6+1);
+            terningSum = terningSum + i;
+            oppg3.innerHTML= "summen av terningen er " + terningSum;
+            console.log(i);
+        }
+
+        let i =10;
+
+        while(i<30){
+            i++;
+        }
+
+
+    </script>
+</body>
+</html>
