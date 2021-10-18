@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boken for-løkker</title>
+</head>
+<body>
+
+    <div>
+        <h2>oppg 1</h2>
+        <p id="A"></p><br>
+        <p id="B"></p>
+        <p id="C"></p><br>
+        <h2>oppg 3</h2><br>
+        <p id="To"></p>
+
+    </div>
+    <script>
+               /* ----------------------------------------------
+
+                    oppg 1 s.94
+
+            ----------------------------------------------*/  
+            let A = document.getElementById("A");
+            // 1. A
+            A.textContent= "oppg.1A: ";
+            for(let i=10;i>0;i--){
+              A.innerHTML+=i+" ";
+            }
+
+
+
+            // 1. B
+            let B = document.getElementById("B");
+            B.textContent= "oppg.1B: ";
+            for(let i=0; i<51; i=i+2){
+                B.innerHTML+="<li>"+i+"</li>";
+                
+            }
+
+
+            // 1.C
+            let C = document.getElementById("C");
+            C.textContent= "oppg.1C: ";
+         
+            let sum = 0;
+            for(let i=1; i<1001; i++){
+                
+                sum = i + sum;
+                C.innerHTML+= " "+sum ;
+               
+            }
+
+            /* ----------------------------------------------
+
+                    oppg 3 s.94
+
+            ----------------------------------------------*/ 
+            
+            let oppg_3= document.getElementById("To");
+            for(let i=0; i<=10; i++){
+                for( let j=0; j<=10; j++){
+                    let sum = i*j;
+                    oppg_3.innerHTML+="<li>"+ j + " x "+ i+" = "+sum +"</li>";
+                }
+            }
+            
+
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for og</title>
+</head>
+<body>
+
+
+    <p id="chat"></p><br>
+
+    <p id="greeting-el"></p>
+
+
+    <script>
+        // Count to ten!
+        
+            // We need to specify...
+            
+            // Where should we START counting?
+            // Where is the FINISH line?
+            // What's the STEP SIZE we should use?
+            
+            //    START           FINISH       STEP SIZE
+            for ( let count = 1;  count < 11;  count += 1 )  {
+                
+                //this code will run until we reach 10 
+                console.log(count)
+            
+            }
+
+
+            //counting from 10 to 100 in 10 steps
+            for (let i = 10; i < 101; i += 10) {
+                console.log(i)
+            }
+
+
+
+
+            /* ----------------------------------------------
+
+                    chatting - arrays + for-loops
+
+            ----------------------------------------------*/     
+
+            let chat =document.getElementById("chat");
+
+            let melding = [
+                "hello how are you",
+                "im good too, how is ur mum?",
+                "my mom is cool too"
+            ];
+            // array.push legger til en item på slutten av rekken
+            melding.push("my dad is not so cool..");
+            console.log(melding);
+
+            //array.pop sletter en item fra slutten av rekken
+            melding.pop(); //merk at legnden går fra 4 til 3
+
+
+
+            //dont write the same code all over again: DRY - dont repeat yourself
+                            // console.log(messages[0])
+                            // console.log(messages[1])
+                            // console.log(messages[2])
+                            // console.log(messages[3])
+
+            for(let i=0; i< melding.length; i++){
+                // her printer den ut lengden på i
+                console.log(i);
+
+                //her skal vi printe meldingene ut ved hjelp av i
+                chat.innerHTML += "<li>" + melding[i] + "<li/>";
+                    
+            }
+
+               /* ----------------------------------------------
+
+                    chatting - arrays + for-loops+ DOM
+
+            ----------------------------------------------*/   
+            let sentence = ["Hello", "my", "name", "is", "Per"] 
+            let greetingEl = document.getElementById("greeting-el")
+
+            for(let i=0; i<sentence.length; i++){
+                greetingEl.textContent+= sentence[i] + " ";
+            }
+
+        </script>
+</body>
+</html>
