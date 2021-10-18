@@ -34,33 +34,46 @@
 
         let vinner = Math.floor(Math.random()*10+1);
         console.log(vinner);
+        let antallGjett = 0;
         
         while(vinner !== 10 ){
             oppg1.innerHTML="Du vant ikke!";
-            vinner++;
+            console.log("vinner=" + vinner);
+            vinner = Math.floor(Math.random()*10+1);
+            antallGjett += 1;
         }
+        oppg1.innerHTML="Du vant! Du måtte gjette " + antallGjett + " ganger.";
        
 
  /* ------------------------------------------------
 
-                           Oppgave 3 
+                           Oppgave 3   FAILL
         
         ---------------------------------------------------*/
         
-        let terningSum = 0;
+       /* let terningSum = 0;
       
         while(terningSum<50){
             let i = Math.floor(Math.random()*6+1);
-            terningSum = terningSum + i;
+            terningSum += i;
             oppg3.innerHTML= "summen av terningen er " + terningSum;
             console.log(i);
-        }
+        }*/
 
-        let i =10;
+        /* ------------------------------------------------
 
-        while(i<30){
-            i++;
+                           Oppgave 4  
+        
+        ---------------------------------------------------*/
+
+        let i = 8
+        let tall = 0
+        while(i< 80){
+            i= i*tall;
+            tall ++;
+            
         }
+        
 
 
     </script>
