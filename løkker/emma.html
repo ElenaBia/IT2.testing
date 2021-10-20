@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="tall"> 7</p>
+    <button id="btn_trill">trykk</button>
+    <script>
+        
+        let tall = [];
+
+        let btn_trill = document.getElementById("btn_trill");
+
+        btn_trill.addEventListener("click",f_trill);
+
+        function f_trill(){
+            let trill = Math.floor(Math.random()*6)+1;
+            trill = Number(trill);
+
+            while(!tall.includes(trill)){
+                tall.push(trill);
+                return trill;
+            }
+
+            
+
+           
+            
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
