@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input-element</title>
+    <style>
+        h2{
+           padding-top: 3em;
+        }
+      
+    </style>
+</head>
+<body>
+    
+    <h2>Eksempel inputfelt</h2>
+
+    <input type="text" id="inpNavn">
+    <span id="txtNavn"></span>
+
+    <!------NY eksempel: Attributter-->
+    <h2>Eksempel attributter</h2>
+
+    <input type="text" id="inpMerke" list="bilmerker" placeholder="bilmerke">
+    <!---   får ut alle merkene og får frem de som har bokstaven du skriver inn
+            du vil også få forslag om ting du har skrevet tidligere. Som f.eks
+            hvis du id-en er username så kan autocomplere gi forslag.
+            Du kan skru av autocomplete hvis du skriver i inputen autocomplete = "off"-->
+    <datalist id="bilmerker">
+        <option value="audi"></option>
+        <option value="BMW"></option>
+        <option value="Ford"></option>
+        <option value="Skoda"></option>
+
+    </datalist><br><br><br><br>
+
+    <!--- Maxlength og minlength sier hvor mange tegn du skal ha med -->
+    <label for="brukernavn"> Brukernavn:</label>
+    <input type="text" id="brukernavn" size="20" maxlength="5" placeholder="navn@epost.no">
+    <label for="passord">Passord:</label>
+    <input type="text"id="passord" size="20" minlength="3" placeholder="minst 8 tegn">
+
+
+    <!------NY eksempel: Inkrementer-->
+   
+    <h2>Eksempel Inkrementer: kalkis</h2>
+    <span><input type="number" id="tall1"> +</span>
+    <span><input type="number" id="tall2"> =</span>
+    <span id="txtSum"></span>
+
+
+
+
+    <script src="test.js"></script>
+</body>
+</html>
