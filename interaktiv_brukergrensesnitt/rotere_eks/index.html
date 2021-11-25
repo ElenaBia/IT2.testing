@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rotere</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        #katter{
+            width: 300px;   
+            margin: 150px;
+            /* tiden den bruker på å rotere*/
+            transition: 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Fargevelgeren endrer bakgrunssfargen og glideren roterer på bildet</h1><br><br>
+    <div>
+        <!--Her lager vi en glider-->
+        <input type="range" id="rotasjon" min="0" max="360" value="0">
+           <!--Her lager vi en fargevelger-->
+        <input type="color" id="farge">
+    </div>
+    <img src="katter.png" id="katter">
+
+    <script>
+        let katt = document.getElementById("katter");
+        let rotasjon = document.getElementById("rotasjon");
+        let farge = document.getElementById("farge");
+
+        farge.onchange = function(){
+            //bytter bakgrunnsfargen til det brukeren valgte
+            document.body.style.background = farge.value;
+        }
+        rotasjon.onchange = function(){
+            //skal rotere figuren..?
+            katt.style.transform = "rotate("+rotasjon.value+"deg)";
+        }
+        
+
+</script>
+</body>
+</html>

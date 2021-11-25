@@ -22,23 +22,6 @@ inpNavn.onfocus = function(){
     console.log("nå er det fokus"); 
 }
 
-    /* ----------------------------------------------
-
-                   eksempel s.131
-                   Attributter
-
-     ----------------------------------------------*/ 
-
-let Navn = document.getElementById("Navn");
-let T_Navn = document.getElementById("T_Navn");
-Navn.oninput = function(){//funksjon som printer ut navne
-    T_Navn.innerHTML = Navn.value;
-
-}
-Navn.onchange = function(){
-    //setter verdien til en tom tekst når vi trykker enter
-    Navn.value=""; 
-}
 
     /* ----------------------------------------------
 
@@ -53,6 +36,7 @@ let txtSum = document.getElementById("txtSum");
 
 function leggSammen () {
     //lager nye variabler for å regne og hente ut info
+    console.log("hei");
     let t1 = Number(tall1.value);
     let t2 = Number(tall2.value);
     let sum = t1+t2;
