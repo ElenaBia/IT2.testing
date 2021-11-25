@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oppg.6 s.137</title>
+</head>
+<body>
+    <h1>oppg.6 s.137</h1>
+
+    <div>
+        <label for="width"> bredde;</label>
+        <!---sier at bredden skal være ml 100 og 1000 fra glideren-->
+        <input type="range" id="bredde" min="100" max="1000" value="0">
+        <label for="height"> høyde;</label>
+          <!---sier at høyden skal være ml 100 og 1000 fra glideren-->
+        <input type="range" id="høyde" min="100" max="1000" value="0">
+    </div>
+    <img src="katter.png" id="katter">
+
+    <script>
+        let bredde = document.getElementById("bredde");
+        let høyde = document.getElementById("høyde");
+        let katt = document.getElementById("katter");
+
+        bredde.onchange = function(){
+            katt.style.width = bredde.value + "px";
+        }
+
+        høyde.onchange = function(){
+            katt.style.height = høyde.value + "px";
+        }
+    
+
+    </script>
+
+</body>
+</html>

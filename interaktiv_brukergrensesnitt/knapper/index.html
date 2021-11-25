@@ -8,13 +8,83 @@
 </head>
 <body>
 
-    <p>vil du ha rømmedressing?</p>
+    <!---------------------------------------------------
+ 
+            eksempel 1 
+
+----------------------------------------------------->
+
+    <h2>eks. s.139</h2>
+    <p>vil du ha rømmedressing? </p>
     <!--lager de to knappene-->
     <label><input type="radio" name="rømme" id="radio_ja">JA</label>
     <label><input type="radio" name="rømme" id="radio_nei">NEI</label>
 
     <!--her kommer informasjone-->
-    <p id="info"></p>
+    <p id="info"></p><br><br>
+
+
+
+     <!---------------------------------------------------
+ 
+            eksempel 2  
+
+----------------------------------------------------->
+    <h2>data-atributt og evt.target s.140</h2>
+    <div>
+        <p>velg farge på ballongen</p>
+
+        <!---- OBS! bildene må være i samme mappe som html OG du MÅ ha SAMME NAME 
+                for at bare EN knapp blir selektert om gangen - hvis ikke blir alle fylt inn-->
+        <label>blå:<input name="b" type="radio" data-bilde="blue.jpeg" id="blue"> </label><br>
+        <label>rød:<input name="b" type="radio" data-bilde="red.jpeg" id="red"></label><br>
+        <label>gul:<input name="b" type="radio" data-bilde="yellow.jpeg" id="yellow"></label><br>
+        <label>grønn:<input name="b" type="radio" data-bilde="green.jpeg" id="green"></label><br>
+    </div>
+    
+        <img id="imgBallong" width="100px"><br>
+    
+     <!---------------------------------------------------
+ 
+            eksempel 3 check box 
+
+----------------------------------------------------->
+
+    <h2>CHECKBOX s.142</h2>
+    <p>Vil du ha ekstra?</p>
+    <label for="dressing">Dressing</label>
+    <input type="checkbox" data-svar="dressing" id="dressing"><br>
+
+    <label for="ost"> ost</label>
+    <input type="checkbox"  data-svar="ost" id="ost"><br>
+
+    <label for="bacon"> bacon</label>
+    <input type="checkbox"  data-svar="bacon" id="bacon"><br>
+
+    <label for="guacamole"> guacamole</label>
+    <input type="checkbox"  data-svar="guacamole" id="guacamole"><br>
+
+
+    
+    <p id="ekstra"></p><br>
+
+     <!---------------------------------------------------
+ 
+            eksempel 4 nedtrekkliste
+
+----------------------------------------------------->
+    <h2>nedtrekkliste s.143</h2>
+
+    <select id="velgStr">
+        <option value="">Velg str</option>
+        <option value="s">S</option>
+        <option value="m">M</option>
+        <option value="l">L</option>
+    </select>   
+
+    <span id="str_output"></span>
+
+
 
 
     <script src="test.js"></script>

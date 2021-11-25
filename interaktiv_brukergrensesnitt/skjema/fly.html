@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fly-eksempel</title>
+</head>
+<body>
+    <!--- her begynner skjema med alt som skal fylles inn, alt er required-->
+   <form id="frmFlyreise">
+
+        <!--------Først hvilket sted man reiser ifra-->
+       <label for="velgFlyplassUtreise"> Fly fra</label>
+       <select id="velgFlyplassUtreise" required>
+           <option value=""></option>
+           <option value="Oslo">Oslo</option>
+           <option value="Bergen">Bergen</option>
+           <option value="Trondheim">Trondheim</option>
+       </select><br>
+       <!----------så datoene -------->
+       <label for="inpUtDato"> Velg dato for utreise</label> 
+       <input type="date" id="inpUtDato" required><br>
+       <label for="inpReturdato"> Velg dato for retur</label>
+       <input type="date" id="inpReturdato" required><br>
+
+       <!------så lager vi to radiokanpper om tur og med retur---->
+    
+       <label for="rbEnVei">En vei</label>
+       <input type="radio" name="rbType" id="rbEnVei" value="1"  data-tekst="En_vei" required>
+       <label for="rbTR">Tur/retur</label>
+       <input type="radio" name="rbType" id="rbTurRetur" value="2"  data-tekst="Tur/retur" required>
+      
+       <br>
+
+        <!-----legger til antall voksne/barn, begrenser begge til 10 stk-->
+        <label for="voksne">Antall voksne</label>
+        <input type="number"  id="voksne" max="10" min="1"  value="1" required ><br>
+        <label for="barn">Antall barn</label>
+        <input type="number"  id="barn" max="10" value="0" required ><br>
+
+        <!-----legger til hotell/bil valg-->
+        <label for="cbHotell">Tilbud på hotell</label>
+        <input type="checkbox" id="cbHotell">
+        <label for="cbBil">Tilbud på leiebil</label>
+        <input type="checkbox" id="cbBil">
+
+       <!----------så har man knappen som sender inn-->
+       <button type="submit">Søk og bestill</button>
+   </form> <br>
+   <div id="info"></div>
+
+  
+
+
+    <script>
+        //utskrift
+        let info = document.getElementById("info");
+        //formen
+        let frmFlyresie = document.getElementById("frmFlyreise");
+
+        //stedet
+        let velgFlyplassUtreise = document.getElementById("velgFlyplassUtreise");
+
+        //dato
+        let inpUtDato = document.getElementById("inpUtDato");
+        let inpReturdato = document.getElementById("inpReturdato");
+
+    
+        //voksen/barn
+        let voksne = document.getElementById("voksne");
+        let barn = document.getElementById("barn");
+
+        //om kunden ønsker de andre tilbudene på bil og hotell
+        let cbBil = document.getElementById("cbBil");
+        let cbHotell = document.getElementById("cbHotell");
+
+        frmFlyresie.onsubmit = function(evt){
+            //forhindrer at vi oppdaterer siden
+            evt.preventDefault();
+
+
+            //skriver inn utreise plass
+            info.innerHTML = "Utreise fra "+velgFlyplassUtreise.value;
+
+            //merk hvordan datoene ligger her inne i funksjonen
+            info.innerHTML += "Utreise dato: " + inpUtDato.value + "<br>";
+            info.innerHTML += "Retur dato: " + inpReturdato.value + "<br>";
+
+            //type reise
+            let valgtType = document.querySelector("input[name=rbType]:checked");
+            //printer ut hvilken type reise man valgte
+            info.innerHTML += "Reisetype " + valgtType.value + "-";
+            //printer ut beskrivelsen av reisetypen
+            info.innerHTML += valgtType.getAttribute("data-tekst")+ "<br>";
+
+
+            //printer ut antall voksne og barn
+            info.innerHTML += "Antall voksne: " + voksne.value+ "<br>";
+            info.innerHTML += "Antall barn: " + barn.value+ "<br>"; 
+
+            //lager en if og else for de ekstra tilbudene
+            if(cbBil.checked){
+                info.innerHTML+="Kunden ønsker tilbud på leiebil"+ "<br>";
+            }
+            if(cbHotell.checked){
+                info.innerHTML += "Kunden ønsker tilbud på hotell";
+            }
+            
+        }
+
+
+
+        
+    </script>
+</body>
+</html>

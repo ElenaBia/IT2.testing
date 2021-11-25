@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skjema</title>
+</head>
+<body>
+
+    <h2>eks. s. 148 bok registrering</h2>
+    <!--Start på skjema-->
+    <form id="frmBok">
+
+        <input type="text" name="forfatter" id="forfatter" placeholder="forfatter" required>
+        <input type="text" name="tittel" id="tittel" placeholder="Bok tittel" required>
+        <!--- knappen som skal submitte-->
+        <button type="submit"> Registrer</button>
+    </form>
+
+    <span id="info"></span><br><br>
+
+    <h2>eks. s. 149 huskeliste</h2>
+
+    <form id="frmHuskTing">
+
+        <input type="text" id="inpTing" placeholder="Ting jeg må huske">
+        <button type="submit">Skriv ned</button>
+    </form>
+
+    <ul id="huskeliste"></ul>
+
+    <script>
+
+        /*
+                bok registrering eks
+                -------------------
+        */
+        //refererer til skjema
+        let frmBok = document.getElementById("frmBok");
+        //henter ut 
+        let forfatter = document.getElementById("forfatter");
+        let tittel = document.getElementById("tittel");
+        let info = document.getElementById("info");
+
+        frmBok.onsubmit = function(evt){
+            //hindrer at data sendes til en annen nettside
+            evt.preventDefault();
+            //skriver ut resten av info
+            info.innerHTML = "forfatter: " + forfatter.value + "<br>";
+            info.innerHTML += "tittel: " + tittel.value; 
+        }
+
+          /*
+                huskeliste eks
+                -------------------
+        */
+
+        let inpTing = document.getElementById("inpTing");
+        let liste = document.getElementById("huskeliste");
+        let frmHuskTing =document.getElementById("frmHuskTing");
+
+        frmHuskTing.onsubmit = function(evt){
+            //singlepage greien
+            evt.preventDefault();
+            //skriver ut det man har inni
+            liste.innerHTML+= "<li>" +inpTing.value+"</li>";
+            //tømmer input sånn at man slipper å ta det vekk selv
+            inpTing.value = "";
+        }
+
+
+
+    </script>
+
+</body>
+</html>

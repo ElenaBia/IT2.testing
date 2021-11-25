@@ -2,7 +2,7 @@
       /* ----------------------------------------------
 
                    oppg 1. s.128
-
+ 
             ----------------------------------------------*/     
 
 
@@ -29,20 +29,24 @@ let elev_output = document.getElementById("elev_output");
 //definerer sum på antall elever i starten
 let SumAntallElever = 0;
 
+//henter info om hvor mange elever som blir tatt inn om gangen
+let steg = document.getElementById("steg");
+
+
 //Spørsmål. Hvordan kan eg flette inn evt.target her ?
 // Er det best med anonyme funksj. eller navngitte funksj. i dette tilfelle---tenker på lengden?
-btn_elev.onclick = function (evt){
-    //virker unødvendig, hvorfor bruke parameter?
-    let knapp = evt.target;
+btn_elev.onclick = function(){
 
-    //basically steget sumen øker med
-    let EleverOmGangen = 10;
+    //gjør det også om til et tall pga. vi henter info fra string
+    let EleverOmGangen = Number(steg.value);
 
-    //regner ut summen
+    console.log(EleverOmGangen);
+
+   //summerer alle elevene som kommer inn
     SumAntallElever += EleverOmGangen;
 
-    //begrenser til 30 elever. Hva som skjer når det er fult
-    if(SumAntallElever===30){
+    //begrenser til 30 elever. Hva som skjer når det er over eller lik 30:
+    if(SumAntallElever>=30){
         elev_output.innerHTML = "No er det " + SumAntallElever + " elever. Det er fullt!";
         //tar vekk knappen
         btn_elev.style.display = "none";
@@ -54,6 +58,7 @@ btn_elev.onclick = function (evt){
    
     //sjekker med konsolen
     console.log("Du tar " + EleverOmGangen + " elev(er) om gangen.");
+
 }
 
 

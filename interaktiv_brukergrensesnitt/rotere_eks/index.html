@@ -39,8 +39,11 @@
             document.body.style.background = farge.value;
         }
         rotasjon.onchange = function(){
-            //skal rotere figuren..?
+            //skal rotere 
             katt.style.transform = "rotate("+rotasjon.value+"deg)";
+            /*vi setter rotatet i hermetegn pga det er css property, 
+            men vi tar +roatsjon.value pga det er js. og deg står for
+            degrees.*/
         }
         
 
