@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zoom</title>
+
+    <style>
+        #ramme{
+            width: 475px;
+            height: 300px;
+            border: 1px solid black;
+            overflow: hidden; /*spesifiser hva som skjer hvis innholdet går utenfor kontaineren
+            margin: 50px auto;/*midtstiller*/
+        }
+        #img{
+            cursor: zoom-in; /*Forstørrelsesglass*/
+            width: 475px; /*Bildet er opprinnelig 1900 piksel bredt*/
+        }
+    </style>
+</head>
+<body>
+
+    <div id="ramme">
+        <img src="katter.png" id="img">
+    </div>
+
+</body>
+
+    <script>
+        let img = document.getElementById("img");
+        let ramme = document.getElementById("ramme");
+
+        //alternativt kan du lage med ad..eventlistener.
+        img.onmousemove = function(evt){
+            img.style.width = "1900px" //Zoomer inn
+            img.style.marginLeft = 3*(-evt.clientX+ramme.offsetLeft)+"px"; //beveger rundt på bildet
+            img.style.marginTop = 3*(-evt.clientY+ramme.offsetTop)+"px";//beveger rundt på bildet
+            img.style.cursor = "zoom-in";
+        };
+
+        img.onmouseout=function(){
+            img.style.width="475px"; //zommer ut
+            img.style.marginLeft = 0;
+            img.style.marginTop = 0;
+        }
+        
+    </script>
+</html>

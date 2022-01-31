@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text og bilde</title>
+
+    <!--Legger inn css-->
+    <style>
+        .banner{
+            width: 70pc;
+            height: 40pc;
+            position: relative; /*Sørger for at bannerens kanter
+            forholder de andre elementene seg til*/
+            background-color: green;
+        
+        }
+
+        #katt-img{
+            position: absolute;
+            width: 70pc;
+            height: 40pc;
+            left: 0; /*helt inntil venstre kant*/
+            top: 0;/*helt inntil øvre kant*/
+            
+        }
+        #tekst{
+            position: absolute;
+            font-family: 'Times New Roman', Times, serif;
+            right: 20px; /*20px fra høyre kant*/
+            bottom: 20px;/*20px fra nedre kant i kontainer*/
+            background-color: aliceblue;
+            font-size: 40px;
+        }
+        #donut-logo{
+            position: absolute;
+            left: 5px;
+            top: 5px;
+        }
+        h1{
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>bilde og tekst</h1>
+    
+    <h3>Absolutt posisjonering med</h3>
+
+    <input type="text" id="skriv" placeholder="Skriv txt-en på bilde :)">
+
+    <article class="banner">
+        <!---legger inn elementene som skal manipuleres i css-->
+        <img src="katter.png" id="katt-img">
+        <span id="tekst">Katter</span>
+        <img src="donut.svg" id="donut-logo">
+    </article>
+
+    <script>
+        let txtBilde = document.getElementById("tekst");
+        let BrukerSkriv = document.getElementById("skriv");
+        
+
+        BrukerSkriv.onfocus = function(){
+            //når du trykker på inputen så kommer den til fokus
+            console.log("nå er det fokus"); 
+        }
+
+       BrukerSkriv.oninput = function() {
+            txtBilde.innerHTML =  BrukerSkriv.value;;
+        }
+ 
+
+    </script>
+</body>
+</html>
