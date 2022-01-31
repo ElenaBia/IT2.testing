@@ -16,7 +16,7 @@
         }
         #img{
             cursor: zoom-in; /*Forstørrelsesglass*/
-            width: 475px; /*Bildet er opprinnelig 1900 piksel bredt*/
+            width: 100%; /*Bildet skal dekke 100% av kontaineren*/
         }
     </style>
 </head>
@@ -41,7 +41,7 @@
         };
 
         img.onmouseout=function(){
-            img.style.width="475px"; //zommer ut
+            img.style.width="100%"; //zommer ut
             img.style.marginLeft = 0;
             img.style.marginTop = 0;
         }

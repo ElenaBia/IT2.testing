@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ikoner</title>
+
+    <style>
+        .fag{
+            height: 130px; /*høyden på kontaineren bildet er delt opp i*/
+            display: block;
+            background-image: url(https://cdn-icons-png.flaticon.com/512/649/649812.png);
+            background-repeat: no-repeat;
+            line-height: 4em; /*stiller teksten vertikalt*/
+            border: purple 3px solid;/*se hvordan bildet er inndelt*/
+            text-decoration: none;/*fjerner underlinen til linken til*/
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 30px;
+            color: red;
+        }
+
+        #matte{
+            background-position: 0 -3pc;/*y-verdi 108 er fra topp, derfor må vi ta minus*/
+            padding-left: 11em; /*gir plass til ikonet*/
+        }
+        #kjemi{
+            background-position: 0 -11em;
+            padding-left: 18em;
+        }
+        #bio{
+            background-position: 0 -6.5em;
+            padding-left: 15em; /*gir plass til ikonet*/
+        }
+    </style>
+</head>
+<body>
+    <a href="html" id="matte" class="fag">Algebra</a>
+    <a href="html" id="bio" class="fag">Bio</a>
+    <a href="html" id="kjemi" class="fag">Kjemi</a>
+   
+</body>
+</html>
