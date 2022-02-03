@@ -1,0 +1,22 @@
+body {
+    background-color: darkred;
+    color: aliceblue;
+    font-family: "Roboto";
+}
+
+#bandet {
+    text-align: center;
+}
+
+#bandet > img {
+    height: 180px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#Info {
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
