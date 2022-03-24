@@ -1,0 +1,8 @@
+:root{ /*referer til hvilke som hlest html element*/
+
+    /*de to linjene i begynnelsen betyr at det er en variabel*/
+    --primary-background-color: #efefef;
+    /*lager en ny variabel*/
+    --primary-text-color: #333333;
+    
+}
